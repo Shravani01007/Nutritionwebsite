@@ -1,24 +1,24 @@
-#Windows users:
+#Windows users:<br>
 
-Download xampp server and turn on apache and sql server
+Download xampp server and turn on apache and sql server<br>
 
-##Mac Os, Ubuntu and windows users continue here:
+##Mac Os, Ubuntu and windows users continue here:<br>
 
-Create a database locally named databasename
-Download composer https://getcomposer.org/download/
-Pull Laravel/php project from git provider.
-Rename .env.example file to .envinside your project root and fill the database information. (windows wont let you do it, so you have to open your console cd your project root directory and run mv .env.example .env )
-Open the console and cd your project root directory
-Run composer install or php composer.phar install
-Run php artisan key:generate
-Run php artisan migrate
-Run php artisan db:seed to run seeders, if any.
-Run php artisan serve
-#####You can now access your project at localhost:8000 :)
+Create a database locally named databasename<br>
+Download composer https://getcomposer.org/download/<br>
+Pull Laravel/php project from git provider.<br>
+Rename .env.example file to .envinside your project root and fill the database information. (windows wont let you do it, so you have to open your console cd your project root directory and run mv .env.example .env )<br>
+Open the console and cd your project root directory<br>
+Run composer install or php composer.phar install<br>
+Run php artisan key:generate<br>
+Run php artisan migrate<br>
+Run php artisan db:seed to run seeders, if any.<br>
+Run php artisan serve<br>
+#####You can now access your project at localhost:8000 :)<br>
 
-If for some reason your project stop working do these:
-composer install
-php artisan migrate
+If for some reason your project stop working do these:<br>
+composer install<br>
+php artisan migrate<br>
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
