@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<input type="hidden" name="users_id" value="{{ Auth::user()->id }}"> 
 <div class="row">
  @if(count($data)>0)
     @foreach($data as $row)
@@ -11,8 +11,14 @@
                     <img class="card-img-top" src="{{ $row->photos}}" alt="Card Image" style="height:250px;width=100%">
                     <div class="card-body" style="color: aliceblue">
                         <p style="text-align: center">{{$row->fruitname}}</p>
-                        <h6 style="text-align: center">{{ $row->disease}}</h6>
+                        <h4 style="text-align: center; color:#f6e785;">Rs. {{ $row->price}}/-</h4>
                         <p style="text-align: center"><a  href="/fruitview/{{ $row->id }}" class="btn btn-success">View Details</a></p>
+                        <p style="text-align: center"><form style="text-align: center"action="/add_to_cart" method="POST">
+                        @csrf
+                        <input type="hidden" name="addfruits_id" value="{{$row->id}}">
+                        <input type="hidden" name="users_id" value="{{ Auth::user()->id }}">  
+                        <button class="btn btn-primary">Add to Cart</button>
+                        </form></p>
                     </div>
                 </div>
                 </div>

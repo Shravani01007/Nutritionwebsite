@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<input type="hidden" name="users_id" value="{{ Auth::user()->id }}"> 
 @if (session('info'))
                         <div class="alert alert-success" role="alert">
                             {{ session('info') }}

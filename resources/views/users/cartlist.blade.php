@@ -137,7 +137,53 @@ $total=UsersController::cartItem();
             </div>
         </nav>
         <main class="py-4">
-            @yield('content')
+                        @if (session('info'))
+                                        <div class="alert alert-success" role="alert">
+                                            {{ session('info') }}
+                                        </div>
+                                    @endif
+                <div class="custom product">
+                <div class="col-sm-10">
+                <div class="trending-wrapper">
+                @if($total != 0 )
+                <h1 style="text-align:center;color: #d91616">Your Cart</h1>
+
+                &nbsp;&nbsp;<a href="ordernow" class="btn btn-success">Order Now</a><br><br>
+
+                @foreach($products as $item)
+                <div class="row searched-item " style="margin-bottom:20px; border-bottom:1px solid #ccc;padding-bottom:20px">
+                    <div class="col-sm-3">
+                        <a href="fruitview/{{$item->id}}">
+                        <img class="trending-image"src="{{$item->photos}}"style="width:150px; height:120px"> 
+                        </a>
+                    </div>
+                    <div class="col-sm-3">
+                        <div>
+                            <br>
+                            <h2>{{$item->fruitname}}</h2>
+                        
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="padding:10px;text-align:center;">
+                        <div>
+                            <br>
+                            <h5>Rs.{{$item->price}}</h5>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <br>
+                        <a href="/removecart/{{$item->cart_id}}"> <button class="btn btn-danger" > Remove from Cart</button></a>
+                    </div>
+                </div>
+                @endforeach
+
+                </div><a href="ordernow" class="btn btn-success">Order Now</a>
+
+                @else
+                <h4 style="text-align:center">Cart Is Empty</h4>
+                @endif
+                </div>
+                </div>
         </main>
         
     </div>
@@ -148,4 +194,7 @@ $total=UsersController::cartItem();
 </body>
 </html>
 <script src="{{ asset('js/jquery-3.5.1.min.js') }}" ></script>
+
+
+
 

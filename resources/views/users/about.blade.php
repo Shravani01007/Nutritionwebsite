@@ -1,7 +1,7 @@
 @extends('layouts.app') 
 
 @section('content')
-
+<input type="hidden" name="users_id" value="{{ Auth::user()->id }}"> 
 <div class="container" id="about">
    
         <img src="icons/20.jpg" style="width: 100%">
@@ -23,9 +23,9 @@
                 About Homecure
             </h1><br>
             <p style="text-align:center; font-size:20px"> 
-             HealthCure is dedicated to the prevention and treatment of illness and enhancing the greater health of individuals, families and communities throughout the world. A not-for-profit online health care system, HealthCure cares for patients from beginning to end-of-life.</p>
+             HomeCure is dedicated to the prevention and treatment of illness and enhancing the greater health of individuals, families and communities throughout the world. A not-for-profit online health care system, HomeCure cares for patients from beginning to end-of-life.</p>
 
-            <p style="text-align:center; font-size:20px">We serve our communities by providing exceptional care, as we prevent illness, restore health and provide comfort to all who entrust us with their care.Our mission is To Advance the Science, Education and Practice of Nutrition and vision is A Healthier World through Evidence-based Nutrition. HealthCure is a website that offers credible information to help you make healthful eating choices. It serves as a gateway to reliable information on nutrition and healthy eating for consumers.</p>
+            <p style="text-align:center; font-size:20px">We serve our communities by providing exceptional care, as we prevent illness, restore health and provide comfort to all who entrust us with their care.Our mission is To Advance the Science, Education and Practice of Nutrition and vision is A Healthier World through Evidence-based Nutrition. HomeCure is a website that offers credible information to help you make healthful eating choices. It serves as a gateway to reliable information on nutrition and healthy eating for consumers.</p>
 
         </div>
        

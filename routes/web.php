@@ -33,6 +33,12 @@ Route::get('/homeremedies', 'UsersController@homerem');
 Route::put('/suggestionadded', 'UsersController@suggestionadded');
 Route::post('/usersearch', 'UsersController@search');
 Route::get('/fruitview/{id}', 'UsersController@fruitview');
+Route::post('/add_to_cart', 'UsersController@addToCart');
+Route::get('/cartlist', 'UsersController@cartlist');
+Route::get('/removecart/{id}', 'UsersController@removecart');
+Route::get('/ordernow', 'UsersController@ordernow');
+Route::post('/orderplace', 'UsersController@orderplace');
+Route::get('/myorders', 'UsersController@myorders');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -48,10 +54,13 @@ Route::group(['middleware' => ['auth','admin']], function(){
     Route::get('/addfruit', 'Admin\DashboardController@addfruit');
     Route::post('/fruitadded', 'Admin\DashboardController@fruitadded');
     Route::get('/fruitdatabase', 'Admin\DashboardController@fruitdb');
+    Route::get('/orderdatabase', 'Admin\DashboardController@ordersdb');
     Route::get('/fruitedit/{id}', 'Admin\DashboardController@fruitedit');
+    Route::get('/orderedit/{id}', 'Admin\DashboardController@orderedit');
     Route::put('/fruitupdate/{id}', 'Admin\DashboardController@fruitupdate');
+    Route::put('/orderupdate/{id}', 'Admin\DashboardController@orderupdate');
     Route::delete('/fruitdelete/{id}','Admin\DashboardController@fruitdelete');
-    
+    Route::delete('/orderdelete/{id}','Admin\DashboardController@orderdelete');
     //suggestion
     Route::get('/suggestiondatabase', 'Admin\DashboardController@sugdb');
     Route::delete('/suggestiondelete/{id}','Admin\DashboardController@sugdelete');

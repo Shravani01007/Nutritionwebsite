@@ -6,6 +6,7 @@ use DB;
 use App\addremedy;
 use App\suggestion;
 use App\Addfruit;
+use App\Order;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
@@ -34,6 +35,7 @@ class DashboardController extends Controller
     public function fruitupdate(Request $request, $id){
         $fruits = Addfruit::find($id);
         $fruits->fruitname = $request->input('fruitname');
+        $fruits->price = $request->input('price');
         $fruits->description = $request->input('description');
         $fruits->update();
         return redirect('/fruitdatabase')->with('info','Data Updated Successfully.');
@@ -64,6 +66,7 @@ class DashboardController extends Controller
             $fruits->category = $request->input('category');
             $fruits->description = $request->input('description');
             $fruits->disease = $request->input('disease');
+            $fruits->price = $request->input('price');
             $fruits->photos = $url;
             $fruits->save();
             return redirect('/dashboard')->with('info','Data added Successfully.');
@@ -150,6 +153,31 @@ public function addremedy(){
         $fruits = addremedy::findOrFail($id);
         $fruits->delete();
         return redirect('/remedydatabase')->with('info','Data Deleted Successfully.');
+    } 
+
+    //orders
+    public function ordersdb()
+      {
+          $fruits=Addfruit::all();
+          $orders = Order::all();
+          
+          return view('admin.orderdb',compact('orders','fruits'));
+      }
+    public function orderedit(Request $request, $id){
+        $orders = Order::findOrFail($id);
+        return view('admin.orderedit')->with('orders',$orders);
+    }
+    public function orderupdate(Request $request, $id){
+        $orders = Order::find($id);
+        $orders->status = $request->input('status');
+        $orders->payment_status = $request->input('payment_status');
+        $orders->update();
+        return redirect('/orderdatabase')->with('info','Data Updated Successfully.');
+    }
+    public function orderdelete(Request $request, $id){
+        $orders = Order::findOrFail($id);
+        $orders->delete();
+        return redirect('/orderdatabase')->with('info','Data Deleted Successfully.');
     } 
 
 }

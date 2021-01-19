@@ -29,10 +29,10 @@
             <div class="row" style="text-align: center">
                 <div class="col-md-6" style="background-color: #f6e785; height: 10rem">
                    <ul class="one"> 
-                        <li><img src="icons/logo.png" style="height: 7rem; width: 7rem"></li>
+                        <li><img src="../icons/logo.png" style="height: 7rem; width: 7rem"></li>
                         <li> 
                             <h6 style="color: #017d1e"> Care with nature’s touch</h6>
-                            <h1 style="color: #017d1e"> Company_Name</h1>
+                            <h1 style="color: #017d1e"> HomeCure</h1>
                             <h5 style="color: #d91616"> Online Naturopathy - Homeopathy</h5>
                        </li>
                     </ul>
@@ -108,6 +108,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style="color: #e2f1a0" href="{{ url('/role-register') }}">View Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: #e2f1a0" href="{{ url('/orderdatabase') }}">View Orders</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style="color: #e2f1a0" href="{{ url('/suggestiondatabase') }}">View Suggetions/Queries</a>

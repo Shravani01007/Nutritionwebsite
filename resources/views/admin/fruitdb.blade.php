@@ -34,6 +34,7 @@
                                 <td>{{ $row->fruitname }}<br>({{ $row->category}})<br><br><img src="{{ $row->photos }}" style="height: 10rem; width: 10rem"></td>
                                 <td><pre>{{ $row->description }}</pre></td>
                                 <td>{{ $row->disease }}<br><br>
+                                Rs. {{ $row->price }}
                             
                                 <td>
                                     <a href="/fruitedit/{{ $row->id }}" class="btn btn-success">EDIT</a><br><br>
